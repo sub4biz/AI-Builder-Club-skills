@@ -30,6 +30,8 @@ Plus standalone utility skills:
   term. Ships a loop template so it can run on a schedule.
 - **[Visual flow GIF](https://github.com/AI-Builder-Club/skills/blob/main/skills/visual-flow-gif/SKILL.md)** — turn an article, workflow, or architecture into a static PNG +
   animated GIF flow diagram (JSON spec → local Python/Pillow renderer).
+- **[Karaoke captions](https://github.com/AI-Builder-Club/skills/blob/main/skills/karaoke-captions/SKILL.md)** — burn word-level highlight captions into a video
+  (MLX Whisper → ASS → FFmpeg libass).
 
 ## Loop engineer & Codebase harness
 
@@ -101,6 +103,12 @@ Run it again any time to add another loop.
 |---|---|
 | **[`visual-flow-gif`](https://github.com/AI-Builder-Club/skills/blob/main/skills/visual-flow-gif/SKILL.md)** | You want an article, workflow, or architecture turned into a static PNG + animated GIF flow diagram (JSON spec → Python/Pillow renderer). |
 
+**Video** — burn karaoke-style captions into a video
+
+| Skill | Use it when… |
+|---|---|
+| **[`karaoke-captions`](https://github.com/AI-Builder-Club/skills/blob/main/skills/karaoke-captions/SKILL.md)** | You want word-level highlight captions burned into a video. |
+
 **Context** — keep your agent context sharp
 
 | Skill | Use it when… |
@@ -126,6 +134,7 @@ writes artifacts, and appends to `LOG.md`. For code changes it works in an isola
   (Daytona: `daytona` CLI / `DAYTONA_API_KEY`).
 - `open-agent-teams` needs `tmux`, plus whichever CLI agents you delegate to on your PATH
   (claude, codex, grok, pi, opencode, …).
+- `karaoke-captions` (optional) needs macOS Apple Silicon, Python 3.10+, and FFmpeg with `libass`.
 
 ## Repo layout
 
@@ -144,6 +153,7 @@ skills/                                a Claude Code plugin (also a marketplace)
     ├── visual-flow-gif/              (visuals) — JSON spec → PNG + GIF  (scripts/ assets/ references/)
     ├── agent-context-audit/          (context) — audit CLAUDE.md/docs/skills/tools vs Claude 5 guidance
     ├── seo-growth/                   (growth) — cold-start + existing-site SEO playbooks
+    ├── karaoke-captions/             (video) — word-level highlight captions burned into video
     └── open-agent-teams/             (delegation) — any CLI agent in tmux  (scripts/tdel · references/CLAUDE.delegation-template.md)
 ```
 
